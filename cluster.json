@@ -1,0 +1,136 @@
+{
+    "__default__" :
+    {
+        "queue"     : "premium",
+        "allocation": "acc_MYLAB",
+        "tasks"        : 1,
+        "resources" : "\"rusage[mem=12000] span[hosts=1]\"",
+        "jobname"      : "{rule}.{wildcards}",
+        "output"    : "logs/{rule}.{wildcards}.o",
+        "error"     : "logs/{rule}.{wildcards}.e",
+        "walltime"    : "00:30"
+    },
+
+    "trim_fastq_galore" :
+    {
+        "walltime"    : "08:00",
+        "resources"    : "\"rusage[mem=35000]\""
+
+    },
+
+    "trim_fastq_cutadapt" :
+    {
+        "walltime"    : "08:00",
+        "resources"    : "\"rusage[mem=35000]\""
+    },
+
+    "fastqc" :
+    {
+        "walltime"    : "07:00"
+    },
+
+
+    "alignment_R1" :
+    {
+        "resources"    : "\"rusage[mem=35000]\"",
+        "walltime"    : "45:00",
+        "tasks"     : 2
+    },
+
+    "alignment_R2" :
+    {
+        "resources"    : "\"rusage[mem=35000]\"",
+        "walltime"    : "45:00",
+        "tasks"     : 2
+    },
+
+    "rmdup" :
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "09:00"
+    },
+
+    "generate_unmaplist" :
+    {
+        "resources"    : "\"rusage[mem=15000]\"",
+        "walltime"    : "08:00"
+    },
+
+    "split_unmap":
+    {
+        "walltime"    : "08:00"
+    },
+
+    "filter_unmap" :
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "08:00"
+    },
+
+    "trim_stage2" :
+    {
+        "walltime"    : "12:00",
+        "resources"    : "\"rusage[mem=35000]\""
+    },
+
+    "alignment_R1_stage2" :
+    {
+        "resources"    : "\"rusage[mem=35000]\"",
+        "walltime"    : "36:00",
+        "tasks"     : 2
+    },
+
+    "alignment_R2_stage2" :
+    {
+        "resources"    : "\"rusage[mem=35000]\"",
+        "walltime"    : "36:00",
+        "tasks"     : 2
+    },
+
+    "rmdup_stage2" :
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "09:00"
+    },
+
+    "collect_stats" :
+    {
+        "resources"    : "\"rusage[mem=20000]\"",
+        "walltime"    : "10:00"
+    },
+
+    "merge_bam":
+    {
+        "walltime"    : "06:00"
+    },
+
+    "run_multiqc":
+    {
+        "walltime"    : "00:30"
+    },
+
+    "create_tagdir":
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "10:00"
+    },
+
+    "create_hic":
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "12:00"
+    },
+
+    "find_tadloops":
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "08:00"
+    },
+
+    "merge_tadloops":
+    {
+        "resources"    : "\"rusage[mem=25000]\"",
+        "walltime"    : "12:00"
+    }
+
+}
