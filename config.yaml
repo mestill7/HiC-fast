@@ -1,26 +1,25 @@
 #Config setup
 #required arguments
 
-max_threads: 4 # May be increased to speed up alignment
+max_threads: 24 # May be increased to speed up alignment
 restriction_seq: "GATC" #If multiple restriction sites are used, separate each with a comma (e.g. "GATC,GATTC,GACTC")
 read_length_adaptormin: 75 #How short are reads allowed to be after adaptor and restriction site trimming
 read_length_trim_min: 75 #How long should reads be after removing the 3' end?
 
+genome_fasta: "/path/to/mm10/Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa"
 index: "/path/to/hisat_genome/mm10/genome" # path to basename of HISAT2 index
-multiqc_yaml: "/path/to/Tools/HIC_fast/multiqc_config_template.yaml" # example file provided in HIC_fast folder
-ngs_path: "/path/to/Tools/HIC_fast/" # location of HIC_fast folder
+multiqc_yaml: "/path/to/Tools/HiC-fast/multiqc_config_template.yaml" # example file provided in HIC_fast folder
+ngs_path: "/path/to/Tools/HiC-fast/" # location of HIC_fast folder
 
 #homer arguements
-homer_bin: "/path/to/Tools/homer/bin"
-juicer_jar: "/path/to/Tools/HIC_fast/juicer_tools_1.19.02.jar"
+homer_bin: "/path/to/homer/bin"
+juicer_jar: "/path/to/Tools/HiC-fast/juicer_tools_1.19.02.jar"
 homer_genome: "mm10"
-homer_mask: "/path/to/Tools/HIC_fast/mm10/mm10_superdups.bed"
+homer_mask: "/path/to/Tools/HiC-fast/mm10/mm10_superdups.bed"
 main_chr: "chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chrM chrX chrY" #mouse, mm10
+chrom_sizes: "/path/to/mm10/mm10.chrom.sizes"
 
 # OUTPUT options
-two_tier: "FALSE" # Use two-tier approach (TRUE or FALSE)
-to_homer: "TRUE" # Analyze alignments with Homer (TRUE or FALSE)
-to_merge: "TRUE" # Extract Homer scores from merged TAD/loop files
 keep_fastq: "FALSE"  # Independent of the other "stopping point" rules; trimmed fastq files are kept. NOT YET implemented!
 
 
